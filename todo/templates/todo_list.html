@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% block todo %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>todo_list</title>
+</head>
+<body>
+{% csrf_token %}
+<p>未完成</p>
+    {% for todo in todo_list %}
+        <td>
+            {% if todo.todo_priority == '1' %}普通事项{% endif %}
+            {% if todo.todo_priority == '2' %}重要事项{% endif %}
+        </td>
+        <td>{{ todo.todo }}</td>
+        <a href="{% url 'delete' todo.id %}">删除</a>
+        <a href="{% url 'update' todo.id %}">编辑</a>
+        <a href="{% url 'finish' todo.id %}">已完成</a>
+        <br>
+    {% endfor %}
+<p>已完成</p>
+    {% for ftodo in finish_todo %}
+        <td>
+            {% if ftodo.todo_priority == '1' %}普通事项{% endif %}
+            {% if ftodo.todo_priority == '2' %}重要事项{% endif %}
+        </td>
+        {{ ftodo.todo }}
+        <a href="{% url 'delete' ftodo.id %}">删除</a>
+        <a href="{% url 'update' ftodo.id %}">编辑</a>
+        <a href="{% url 'backout' ftodo.id %}">标记为未完成</a>
+        <br>
+    {% endfor %}
+<a  href="{% url 'add'  %}" role="button" >
+    <span > ADD</span>
+</a>
+
+</body>
+</html>
+{% endblock %}

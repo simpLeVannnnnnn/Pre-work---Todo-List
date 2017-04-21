@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo</title>
+</head>
+<body>
+<h1>add todo</h1>
+    <form action="" method="post">{% csrf_token %}
+
+        <textarea name="todo"  id="todo" required="required"></textarea>
+
+                <label class="radio inline" for="todo_priority">
+                    <input type="radio" name="todo_priority" value="1" checked="checked"/>
+                    <span >普通</span>
+                </label>
+                <label class="radio inline" for="todo_priority">
+                    <input type="radio" name="todo_priority" value="2"/>
+                    <span >重要</span>
+                </label>
+
+        <button id="send"  type="submit" name="submit" ></a>  新建 </button>
+
+    </form>
+</body>
+</html>

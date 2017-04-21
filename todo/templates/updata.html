@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UpData</title>
+</head>
+<body>
+<h1>updata todo</h1>
+    <form action="" method="post">{% csrf_token %}
+
+        <textarea name="todo"  id="todo" required="required">{{ todo.todo }}</textarea>
+
+                <label class="radio inline" for="todo_priority">
+                    <input type="radio" name="todo_priority" value="1" {% if todo.todo_priority == '1' %} checked{% endif %}/>
+                    <span >普通</span>
+                </label>
+                <label class="radio inline" for="todop_riority">
+                    <input type="radio" name="todo_priority" value="2" {% if todo.todo_priority == '2' %} checked{% endif %}/>
+                    <span >重要</span>
+                </label>
+
+        <button id="send"  type="submit" name="submit" ></a>  编辑 </button>
+
+    </form>
+</body>
+</html>
