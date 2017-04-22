@@ -1,6 +1,6 @@
 # Pre-work---Todo-List
 简单的todolist
-django 
+django + bootstrap
 需要支持的功能：
 
 * 增加一个待办事项 √
