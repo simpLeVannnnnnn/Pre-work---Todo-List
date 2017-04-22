@@ -3,37 +3,80 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>todo_list</title>
+    <title>TodoList</title>
+    <link rel="stylesheet" href="/static/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery-3.2.1.min.js"></script>
+     <style>.table th, .table td {  text-align: center;
+         height:20px}</style>
 </head>
 <body>
+<div class="page-header">
+<h1 >TodoList</h1>
+</div>
 {% csrf_token %}
-<p>未完成</p>
-    {% for todo in todo_list %}
-        <td>
-            {% if todo.todo_priority == '1' %}普通事项{% endif %}
-            {% if todo.todo_priority == '2' %}重要事项{% endif %}
-        </td>
-        <td>{{ todo.todo }}</td>
-        <a href="{% url 'delete' todo.id %}">删除</a>
-        <a href="{% url 'update' todo.id %}">编辑</a>
-        <a href="{% url 'finish' todo.id %}">已完成</a>
-        <br>
-    {% endfor %}
-<p>已完成</p>
-    {% for ftodo in finish_todo %}
-        <td>
-            {% if ftodo.todo_priority == '1' %}普通事项{% endif %}
-            {% if ftodo.todo_priority == '2' %}重要事项{% endif %}
-        </td>
-        {{ ftodo.todo }}
-        <a href="{% url 'delete' ftodo.id %}">删除</a>
-        <a href="{% url 'update' ftodo.id %}">编辑</a>
-        <a href="{% url 'backout' ftodo.id %}">标记为未完成</a>
-        <br>
-    {% endfor %}
-<a  href="{% url 'add'  %}" role="button" >
-    <span > ADD</span>
-</a>
+<h2 class="text-info">未完成</h2>
+        <table class="table table-hover">
+            <thead>
+			<tr>
+				<th>优先级</th>
+				<th>内容</th>
+                <th> </th>
+			</tr>
+		    </thead>
+            <tbody>
+            {% for todo in todo_list %}
+                <tr class="info">
+                    <td>
+                        {% if todo.todo_priority == '1' %}<span class="label label-success"> 普通事项</span>{% endif %}
+                        {% if todo.todo_priority == '2' %}<span class="label label-warning"> 重要事项</span>{% endif %}
+                    </td>
+                    <td>{{ todo.todo }}</td>
+                    <td>
+                        <a class="btn btn-info" href="{% url 'finish' todo.id %}">
+                            <span class="glyphicon glyphicon-ok"></span> 已完成</a>
+                        <a class="btn btn-info" href="{% url 'update' todo.id %}">
+                            <span class="iglyphicon glyphicon-pencil"></span> 编辑</a>
+                        <a class="btn btn-info" href="{% url 'delete' todo.id %}">
+                            <span class="glyphicon glyphicon-trash"></span> 删除</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+<h2 class="text-success">已完成</h2>
+        <table class="table table-hover">
+            <thead>
+			<tr>
+				<th>优先级</th>
+				<th>内容</th>
+                <th> </th>
+			</tr>
+		    </thead>
+            {% for ftodo in finish_todo %}
+                <tr class="success">
+                    <td>
+                        {% if ftodo.todo_priority == '1' %}<span class="label label-success"> 普通事项</span>{% endif %}
+                        {% if ftodo.todo_priority == '2' %}<span class="label label-warning"> 重要事项</span>{% endif %}
+                    </td>
+                    <td>{{ ftodo.todo }}</td>
+                    <td>
+                        <a class="btn btn-info" href="{% url 'backout' ftodo.id %}">
+                            <span class="glyphicon glyphicon-share-alt"></span> 撤销完成</a>
+                        <a class="btn btn-info" href="{% url 'update' ftodo.id %}">
+                            <span class="iglyphicon glyphicon-pencil"></span> 编辑</a>
+                        <a class="btn btn-info" href="{% url 'delete' ftodo.id %}">
+                            <span class="glyphicon glyphicon-trash"></span> 删除</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+
+
+    <a class="btn btn-lg btn-primary" href="{% url 'add'  %}"><span class="glyphicon glyphicon-plus"></span> 添加一项事项</a>
+
+
 
 </body>
 </html>

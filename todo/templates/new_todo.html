@@ -2,24 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Todo</title>
+    <title>AddTodo</title>
+    <link rel="stylesheet" href="/static/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery-3.2.1.min.js"></script>
 </head>
 <body>
-<h1>add todo</h1>
+<h1>新建事项</h1>
     <form action="" method="post">{% csrf_token %}
 
-        <textarea name="todo"  id="todo" required="required"></textarea>
+        <div class="control-group">
+            <label class="control-label" for="inputIcon">内容</label>
+
+            <div class="controls">
+                <div class="input-prepend">
+                    <span class="add-on"><i class="icon-envelope"></i></span>
+                    <textarea name="todo"  id="todo"  class="span2" required="required"></textarea>
+                </div>
+            </div>
+</div>
+
 
                 <label class="radio inline" for="todo_priority">
                     <input type="radio" name="todo_priority" value="1" checked="checked"/>
-                    <span >普通</span>
+                    <span class="label label-success"> 普通事项</span>
                 </label>
                 <label class="radio inline" for="todo_priority">
                     <input type="radio" name="todo_priority" value="2"/>
-                    <span >重要</span>
+                    <span class="label label-warning"> 重要事项</span>
                 </label>
 
-        <button id="send"  type="submit" name="submit" ></a>  新建 </button>
+        <button id="send"  type="submit" name="submit" class="btn-lg btn-primary" > 新建 </button>
 
     </form>
 </body>
