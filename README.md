@@ -28,11 +28,11 @@ django + bootstrap
 ![image](https://github.com/simpLeVannnnnnn/Pre-work---Todo-List/blob/master/gif/add.gif)
 <br />
 <br />
-删除
+编辑
 ![image](https://github.com/simpLeVannnnnnn/Pre-work---Todo-List/blob/master/gif/delete.gif)
 <br />
 <br />
-编辑
+删除
 ![image](https://github.com/simpLeVannnnnnn/Pre-work---Todo-List/blob/master/gif/updata.gif)
 <br />
 <br />
