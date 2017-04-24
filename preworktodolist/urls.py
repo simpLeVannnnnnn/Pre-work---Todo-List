@@ -20,12 +20,13 @@ from todo import views
 urlpatterns = [
     url(r'^$', views.todo_list, name='todo_list'),
     url(r'^admin/', admin.site.urls),
-    url(r'^newtodo/', views.add_todo),
+    url(r'^new_todo/$', views.todo_list),
     url(r'^todo_list/$', views.todo_list),
     url(r'^todo_list/new_todo/$', views.add_todo, name='add'),
     url(r'^todo_list/todo_delete/(?P<id>\d+)/$', views.todo_delete, name='delete'),
     url(r'^todo_list/todo_finish/(?P<id>\d+)/$', views.todo_finish, name='finish'),
     url(r'^todo_list/todo_backout/(?P<id>\d+)/$', views.todo_back, name='backout'),
     url(r'^todo_list/update_todo/(?P<id>\d+)/$', views.update_todo, name='update'),
+    url(r'^snippets/$', views.snippet_list, name='serializer'),
 
 ]

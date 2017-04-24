@@ -20,7 +20,8 @@
         <table class="table table-hover">
             <thead>
 			<tr>
-				<th>优先级</th>
+				<th >优先级</th>
+                <th >截止日期</th>
 				<th>内容</th>
                 <th> </th>
 			</tr>
@@ -32,6 +33,7 @@
                         {% if todo.todo_priority == '1' %}<span class="label label-success"> 普通事项</span>{% endif %}
                         {% if todo.todo_priority == '2' %}<span class="label label-warning"> 重要事项</span>{% endif %}
                     </td>
+                    <td>{{ todo.expire_date }}</td>
                     <td>{{ todo.todo }}</td>
                     <td>
                         <a class="btn btn-info" href="{% url 'finish' todo.id %}">
@@ -43,13 +45,28 @@
                     </td>
                 </tr>
             {% endfor %}
+
             </tbody>
         </table>
+            <!--<div class="pagination">
+                <span class="step-links">
+                {% if todo_list.has_previous %}
+                    <a href="?page={{ todo_list.previous_page_number }}">上一页</a>
+                {% endif %}
+                    <span class="current">
+                        Page {{ todo_list.number }} of {{ todo_list.paginator.num_pages }}.
+                    </span>
+                    {% if todo_list.has_next %}
+                        <a href="?page={{ todo_list.next_page_number }}">下一页</a>
+                    {% endif %}
+                </span>
+            </div>-->
 <h2 class="text-success">已完成</h2>
         <table class="table table-hover">
             <thead>
 			<tr>
 				<th>优先级</th>
+                <th>截止日期</th>
 				<th>内容</th>
                 <th> </th>
 			</tr>
@@ -60,6 +77,7 @@
                         {% if ftodo.todo_priority == '1' %}<span class="label label-success"> 普通事项</span>{% endif %}
                         {% if ftodo.todo_priority == '2' %}<span class="label label-warning"> 重要事项</span>{% endif %}
                     </td>
+                    <td>{{ ftodo.expire_date }}</td>
                     <td>{{ ftodo.todo }}</td>
                     <td>
                         <a class="btn btn-info" href="{% url 'backout' ftodo.id %}">
@@ -72,11 +90,21 @@
                 </tr>
             {% endfor %}
         </table>
-
-
+            <!--<div class="pagination">
+                <span class="step-links">
+                    {% if finish_todo.has_previous %}
+                    <a href="?fpage={{ finish_todo.previous_page_number }}">上一页</a>
+                    {% endif %}
+                    <span class="current">
+                        Page {{ finish_todo.number }} of {{ finish_todo.paginator.num_pages }}.
+                    </span>
+                    {% if finish_todo.has_next %}
+                        <a href="?fpage={{ finish_todo.next_page_number }}">下一页</a>
+                    {% endif %}
+                </span>
+            </div>-->
     <a class="btn btn-lg btn-primary" href="{% url 'add'  %}"><span class="glyphicon glyphicon-plus"></span> 添加一项事项</a>
-
-
+    <a  href="{% url 'serializer'  %}"><span class="glyphicon glyphicon-plus"></span> 查看serializer</a>
 
 </body>
 </html>
