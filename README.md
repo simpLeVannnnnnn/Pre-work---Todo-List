@@ -3,6 +3,7 @@
 
 django + bootstrap
 
+
 需要支持的功能：
 
 * 增加一个待办事项 √
@@ -18,14 +19,22 @@ django + bootstrap
 * 待办事项可以设置expire date
 * 支持按照不同的方式排序，如优先级，expire date  （优先按照优先级排序）
 
+
+翻页和expire date设置还存在问题注释掉了
+
+<br />
+
 添加
-![image](Pre-work---Todo-List/gif/add.gif)
-
+![image](https://github.com/simpLeVannnnnnn/Pre-work---Todo-List/blob/master/gif/add.gif)
+<br />
+<br />
 删除
-![image](Pre-work---Todo-List/gif/delete.gif)
-
+![image](https://github.com/simpLeVannnnnnn/Pre-work---Todo-List/blob/master/gif/delete.gif)
+<br />
+<br />
 编辑
-![image](Pre-work---Todo-List/gif/updata.gif)
-
+![image](https://github.com/simpLeVannnnnnn/Pre-work---Todo-List/blob/master/gif/updata.gif)
+<br />
+<br />
 完成 撤销完成
-![image](Pre-work---Todo-List/gif/finish.gif)
+![image](https://github.com/simpLeVannnnnnn/Pre-work---Todo-List/blob/master/gif/finish.gif)
