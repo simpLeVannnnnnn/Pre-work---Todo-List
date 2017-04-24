@@ -16,5 +16,16 @@ django + bootstrap
 * 列表界面支持翻页
 * 待办事项可以设置优先级 √
 * 待办事项可以设置expire date
-* 支持按照不同的方式排序，如优先级，expire date
+* 支持按照不同的方式排序，如优先级，expire date  （优先按照优先级排序）
 
+添加
+![](Pre-work---Todo-List/gif/add.gif)
+
+删除
+![](Pre-work---Todo-List/gif/delete.gif)
+
+编辑
+![](Pre-work---Todo-List/gif/updata.gif)
+
+完成 撤销完成
+![](Pre-work---Todo-List/gif/finish.gif)
