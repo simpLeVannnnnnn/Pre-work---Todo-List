@@ -1,7 +1,7 @@
 # Pre-work---Todo-List
 简单的todolist
 
-django + bootstrap
+django + bootstrap + jQuery + Django Rest Framework
 
 
 需要支持的功能：
@@ -20,7 +20,7 @@ django + bootstrap
 * 支持按照不同的方式排序，如优先级，expire date  （优先按照优先级排序）
 
 
-翻页和expire date设置还存在问题注释掉了
+翻页和expire date设置还存在问题注释掉了,写了个查看序列化的接口
 
 <br />
 
@@ -28,13 +28,16 @@ django + bootstrap
 ![image](https://github.com/simpLeVannnnnnn/Pre-work---Todo-List/blob/master/gif/add.gif)
 <br />
 <br />
-编辑
+删除
 ![image](https://github.com/simpLeVannnnnnn/Pre-work---Todo-List/blob/master/gif/delete.gif)
 <br />
 <br />
-删除
+编辑
 ![image](https://github.com/simpLeVannnnnnn/Pre-work---Todo-List/blob/master/gif/updata.gif)
 <br />
 <br />
 完成 撤销完成
 ![image](https://github.com/simpLeVannnnnnn/Pre-work---Todo-List/blob/master/gif/finish.gif)
+<br />
+查看serializer
+![image](https://github.com/simpLeVannnnnnn/Pre-work---Todo-List/blob/master/gif/serializer.gif)
