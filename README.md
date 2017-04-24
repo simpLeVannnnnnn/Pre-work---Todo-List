@@ -19,13 +19,13 @@ django + bootstrap
 * 支持按照不同的方式排序，如优先级，expire date  （优先按照优先级排序）
 
 添加
-![](Pre-work---Todo-List/gif/add.gif)
+![image](Pre-work---Todo-List/gif/add.gif)
 
 删除
-![](Pre-work---Todo-List/gif/delete.gif)
+![image](Pre-work---Todo-List/gif/delete.gif)
 
 编辑
-![](Pre-work---Todo-List/gif/updata.gif)
+![image](Pre-work---Todo-List/gif/updata.gif)
 
 完成 撤销完成
-![](Pre-work---Todo-List/gif/finish.gif)
+![image](Pre-work---Todo-List/gif/finish.gif)
